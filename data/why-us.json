@@ -1,0 +1,20 @@
+{
+  "title": "",
+  "features": [
+    {
+      "icon": "public",
+      "title": "Akses Eksklusif",
+      "description": "Kami membuka pintu ke destinasi tersembunyi dan pengalaman lokal yang tidak akan Anda temukan di panduan wisata manapun."
+    },
+    {
+      "icon": "auto_awesome",
+      "title": "Kurasi Personal",
+      "description": "Setiap rencana perjalanan dirancang khusus untuk mencerminkan gaya dan keinginan Anda, memastikan setiap detik perjalanan terasa berarti."
+    },
+    {
+      "icon": "support_agent",
+      "title": "Pendampingan 24/7",
+      "description": "Dari saat Anda berangkat hingga kembali pulang, tim spesialis kami selalu siap memastikan perjalanan Anda berjalan tanpa kendala."
+    }
+  ]
+}

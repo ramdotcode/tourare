@@ -1,0 +1,10 @@
+{
+  "tagline": "Alur Perjalanan",
+  "title": "Bagaimana Kami Merancang Mimpi Anda",
+  "steps": [
+    { "number": "01.", "title": "Konsultasi Personal", "description": "Bicara dengan spesialis destinasi kami tentang preferensi, minat, dan impian perjalanan yang ingin Anda wujudkan." },
+    { "number": "02.", "title": "Proposal Terkurasi", "description": "Kami akan mengirimkan draf rencana perjalanan yang mendetail, mulai dari akomodasi hingga pengalaman unik di lokasi." },
+    { "number": "03.", "title": "Penyempurnaan", "description": "Kami menyesuaikan kembali setiap detail hingga rencana tersebut benar-benar sempurna dan sesuai dengan ekspektasi Anda." },
+    { "number": "04.", "title": "Keberangkatan", "description": "Anda berangkat dengan tenang. Seluruh logistik dan detail teknis sudah kami tangani dengan sempurna." }
+  ]
+}

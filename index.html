@@ -147,28 +147,8 @@
     <!-- Why Us Section -->
     <section class="py-24 px-8 lg:px-[10%] bg-white dark:bg-background-dark">
         <div class="max-w-[1400px] mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
-                <div class="flex flex-col items-center text-center group">
-                    <div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors">
-                        <span class="material-icons-outlined text-primary text-3xl">public</span>
-                    </div>
-                    <h3 class="serif text-xl mb-4">Akses Eksklusif</h3>
-                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Kami membuka pintu ke destinasi tersembunyi dan pengalaman lokal yang tidak akan Anda temukan di panduan wisata manapun.</p>
-                </div>
-                <div class="flex flex-col items-center text-center group">
-                    <div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors">
-                        <span class="material-icons-outlined text-primary text-3xl">auto_awesome</span>
-                    </div>
-                    <h3 class="serif text-xl mb-4">Kurasi Personal</h3>
-                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Setiap rencana perjalanan dirancang khusus untuk mencerminkan gaya dan keinginan Anda, memastikan setiap detik perjalanan terasa berarti.</p>
-                </div>
-                <div class="flex flex-col items-center text-center group">
-                    <div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors">
-                        <span class="material-icons-outlined text-primary text-3xl">support_agent</span>
-                    </div>
-                    <h3 class="serif text-xl mb-4">Pendampingan 24/7</h3>
-                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Dari saat Anda berangkat hingga kembali pulang, tim spesialis kami selalu siap memastikan perjalanan Anda berjalan tanpa kendala.</p>
-                </div>
+            <div id="why-us-container" class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <!-- Dinamis via CMS -->
             </div>
         </div>
     </section>
@@ -241,39 +221,12 @@
     <section class="py-32 px-8 lg:px-[10%] bg-surface-light dark:bg-surface-dark/10">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-20">
-                <span class="inline-block text-primary font-bold tracking-[0.3em] uppercase text-[10px] mb-6">Alur Perjalanan</span>
-                <h2 class="serif text-4xl md:text-5xl">Bagaimana Kami Merancang Mimpi Anda</h2>
+                <span id="how-it-works-tagline" class="inline-block text-primary font-bold tracking-[0.3em] uppercase text-[10px] mb-6">Alur Perjalanan</span>
+                <h2 id="how-it-works-title" class="serif text-4xl md:text-5xl">Bagaimana Kami Merancang Mimpi Anda</h2>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
-                <div class="flex gap-8 items-start">
-                    <span class="serif text-4xl text-primary/20 shrink-0">01.</span>
-                    <div>
-                        <h4 class="font-bold text-lg mb-3">Konsultasi Personal</h4>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Bicara dengan spesialis destinasi kami tentang preferensi, minat, dan impian perjalanan yang ingin Anda wujudkan.</p>
-                    </div>
-                </div>
-                <div class="flex gap-8 items-start">
-                    <span class="serif text-4xl text-primary/20 shrink-0">02.</span>
-                    <div>
-                        <h4 class="font-bold text-lg mb-3">Proposal Terkurasi</h4>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Kami akan mengirimkan draf rencana perjalanan yang mendetail, mulai dari akomodasi hingga pengalaman unik di lokasi.</p>
-                    </div>
-                </div>
-                <div class="flex gap-8 items-start">
-                    <span class="serif text-4xl text-primary/20 shrink-0">03.</span>
-                    <div>
-                        <h4 class="font-bold text-lg mb-3">Penyempurnaan</h4>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Kami menyesuaikan kembali setiap detail hingga rencana tersebut benar-benar sempurna dan sesuai dengan ekspektasi Anda.</p>
-                    </div>
-                </div>
-                <div class="flex gap-8 items-start">
-                    <span class="serif text-4xl text-primary/20 shrink-0">04.</span>
-                    <div>
-                        <h4 class="font-bold text-lg mb-3">Keberangkatan</h4>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Anda berangkat dengan tenang. Seluruh logistik dan detail teknis sudah kami tangani dengan sempurna.</p>
-                    </div>
-                </div>
+            <div id="how-it-works-steps" class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+                <!-- Dinamis via CMS -->
             </div>
         </div>
     </section>
@@ -285,13 +238,13 @@
         
         <div class="max-w-4xl mx-auto text-center relative z-10">
             <span class="material-icons-outlined text-6xl text-primary/20 mb-10 italic">format_quote</span>
-            <blockquote class="serif text-3xl md:text-5xl leading-[1.3] mb-16 italic">
-                "Perjalanan kami ke pedesaan Jepang bukan sekadar liburan; itu adalah momen untuk kembali ke kesederhanaan. Tourare memahami bahwa kemewahan tertinggi sering kali ditemukan dalam keheningan."
+            <blockquote id="testi-quote" class="serif text-3xl md:text-5xl leading-[1.3] mb-16 italic">
+                <!-- Dinamis -->
             </blockquote>
             <div class="flex flex-col items-center">
-                <img alt="Marcus Thompson" class="w-20 h-20 rounded-full object-cover mb-6 ring-4 ring-white dark:ring-slate-800 shadow-xl" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200"/>
-                <h5 class="font-bold text-base tracking-wide">Marcus Thompson</h5>
-                <p class="text-[10px] text-slate-400 uppercase tracking-[0.3em] mt-2">Perjalanan Kyoto, 2023</p>
+                <img id="testi-image" alt="Author" class="w-20 h-20 rounded-full object-cover mb-6 ring-4 ring-white dark:ring-slate-800 shadow-xl" src=""/>
+                <h5 id="testi-author" class="font-bold text-base tracking-wide"></h5>
+                <p id="testi-role" class="text-[10px] text-slate-400 uppercase tracking-[0.3em] mt-2"></p>
             </div>
         </div>
     </section>
@@ -327,12 +280,11 @@
     <!-- Final CTA Section -->
     <section class="py-32 px-8 lg:px-[10%] bg-white dark:bg-background-dark overflow-hidden relative">
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <h2 class="serif text-5xl md:text-7xl mb-10 leading-tight">Siap menulis bab baru dalam cerita Anda?</h2>
-            <p class="text-slate-500 dark:text-slate-400 text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
-                Biarkan kami merancang perjalanan yang tidak hanya mengisi album foto Anda, tetapi juga menyentuh jiwa Anda. Konsultasikan rencana perjalanan impian Anda hari ini.
+            <h2 id="cta-headline" class="serif text-5xl md:text-7xl mb-10 leading-tight"></h2>
+            <p id="cta-description" class="text-slate-500 dark:text-slate-400 text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
             </p>
             <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-                <button class="bg-primary text-white px-10 py-4 text-sm font-medium hover:bg-opacity-90 transition-all shadow-xl shadow-primary/20 uppercase tracking-widest">Mulai Konsultasi</button>
+                <button id="cta-button" class="bg-primary text-white px-10 py-4 text-sm font-medium hover:bg-opacity-90 transition-all shadow-xl shadow-primary/20 uppercase tracking-widest"></button>
                 <a href="#" class="text-xs font-bold tracking-widest uppercase border-b-2 border-slate-200 hover:border-primary transition-colors pb-1">Lihat Brosur Digital</a>
             </div>
         </div>
@@ -434,13 +386,17 @@
                 document.getElementById('hero-description').innerText = heroData.description;
                 document.getElementById('hero-image').src = heroData.image;
 
-                // Load Destinations Dinamis
+                // Load Destinations Statis (Tetap Muncul 3)
                 const destRes = await fetch('/data/destinations.json');
                 const destData = await destRes.json();
                 const container = document.getElementById('destinations-container');
                 container.innerHTML = ''; // Kosongkan dulu
 
-                destData.items.forEach(item => {
+                // Kita ambil manual dest1, dest2, dest3
+                const items = [destData.dest1, destData.dest2, destData.dest3];
+                
+                items.forEach(item => {
+                    if(!item) return;
                     const card = `
                         <div class="group cursor-pointer">
                             <div class="overflow-hidden mb-8 aspect-[4/5] rounded-sm relative">
@@ -459,6 +415,51 @@
                     `;
                     container.innerHTML += card;
                 });
+
+                // Load Why Us
+                const whyRes = await fetch('/data/why-us.json');
+                const whyData = await whyRes.json();
+                const whyContainer = document.getElementById('why-us-container');
+                whyContainer.innerHTML = whyData.features.map(f => `
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors">
+                            <span class="material-icons-outlined text-primary text-3xl">${f.icon}</span>
+                        </div>
+                        <h3 class="serif text-xl mb-4">${f.title}</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">${f.description}</p>
+                    </div>
+                `).join('');
+
+                // Load How It Works
+                const howRes = await fetch('/data/how-it-works.json');
+                const howData = await howRes.json();
+                document.getElementById('how-it-works-tagline').innerText = howData.tagline;
+                document.getElementById('how-it-works-title').innerText = howData.title;
+                document.getElementById('how-it-works-steps').innerHTML = howData.steps.map(s => `
+                    <div class="flex gap-8 items-start">
+                        <span class="serif text-4xl text-primary/20 shrink-0">${s.number}</span>
+                        <div>
+                            <h4 class="font-bold text-lg mb-3">${s.title}</h4>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">${s.description}</p>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Load Testimonials
+                const testiRes = await fetch('/data/testimonial.json');
+                const testiData = await testiRes.json();
+                document.getElementById('testi-quote').innerText = `"${testiData.quote}"`;
+                document.getElementById('testi-author').innerText = testiData.author;
+                document.getElementById('testi-role').innerText = testiData.role;
+                document.getElementById('testi-image').src = testiData.image;
+
+                // Load CTA
+                const ctaRes = await fetch('/data/cta.json');
+                const ctaData = await ctaRes.json();
+                document.getElementById('cta-headline').innerText = ctaData.headline;
+                document.getElementById('cta-description').innerText = ctaData.description;
+                document.getElementById('cta-button').innerText = ctaData.button_text;
+
             } catch (error) {
                 console.error("Error loading CMS data:", error);
             }

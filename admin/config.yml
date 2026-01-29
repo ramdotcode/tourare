@@ -1,6 +1,7 @@
 backend:
   name: git-gateway
-  branch: main # Pastikan ini sesuai dengan branch utama di GitHub kamu
+  branch: main
+local_backend: true # Pastikan ini sesuai dengan branch utama di GitHub kamu
 
 media_folder: "assets/images" # Tempat menyimpan gambar yang diupload lewat CMS
 public_folder: "/assets/images"
@@ -22,12 +23,74 @@ collections:
         label: "Daftar Destinasi"
         file: "data/destinations.json"
         fields:
-          - name: "items"
-            label: "Destinasi Perjalanan"
-            widget: "list"
-            summary: "{{title}} - {{price}}"
+          - name: "dest1"
+            label: "Destinasi Pertama"
+            widget: "object"
             fields:
-              - {label: "Nama Kota/Tempat", name: "title", widget: "string"}
-              - {label: "Harga (Contoh: $4,200)", name: "price", widget: "string"}
-              - {label: "Deskripsi Singkat", name: "description", widget: "text"}
+              - {label: "Nama", name: "title", widget: "string"}
+              - {label: "Harga", name: "price", widget: "string"}
+              - {label: "Deskripsi", name: "description", widget: "text"}
               - {label: "Gambar", name: "image", widget: "image"}
+          - name: "dest2"
+            label: "Destinasi Kedua"
+            widget: "object"
+            fields:
+              - {label: "Nama", name: "title", widget: "string"}
+              - {label: "Harga", name: "price", widget: "string"}
+              - {label: "Deskripsi", name: "description", widget: "text"}
+              - {label: "Gambar", name: "image", widget: "image"}
+          - name: "dest3"
+            label: "Destinasi Ketiga"
+            widget: "object"
+            fields:
+              - {label: "Nama", name: "title", widget: "string"}
+              - {label: "Harga", name: "price", widget: "string"}
+              - {label: "Deskripsi", name: "description", widget: "text"}
+              - {label: "Gambar", name: "image", widget: "image"}
+
+      - name: "why_us"
+        label: "Section Why Us"
+        file: "data/why-us.json"
+        fields:
+          - name: "features"
+            label: "Fitur Unggulan"
+            widget: "list"
+            min: 3
+            max: 3
+            fields:
+              - {label: "Icon (Material Icon Name)", name: "icon", widget: "string"}
+              - {label: "Judul", name: "title", widget: "string"}
+              - {label: "Deskripsi", name: "description", widget: "text"}
+
+      - name: "how_it_works"
+        label: "Section Alur Perjalanan"
+        file: "data/how-it-works.json"
+        fields:
+          - {label: "Tagline", name: "tagline", widget: "string"}
+          - {label: "Judul", name: "title", widget: "string"}
+          - name: "steps"
+            label: "Langkah-langkah"
+            widget: "list"
+            min: 4
+            max: 4
+            fields:
+              - {label: "Angka (01.)", name: "number", widget: "string"}
+              - {label: "Judul Step", name: "title", widget: "string"}
+              - {label: "Deskripsi Step", name: "description", widget: "text"}
+
+      - name: "testimonial"
+        label: "Section Testimoni"
+        file: "data/testimonial.json"
+        fields:
+          - {label: "Kutipan", name: "quote", widget: "text"}
+          - {label: "Nama Penulis", name: "author", widget: "string"}
+          - {label: "Keterangan/Jabatan", name: "role", widget: "string"}
+          - {label: "Foto Penulis", name: "image", widget: "image"}
+
+      - name: "cta"
+        label: "Section Final CTA"
+        file: "data/cta.json"
+        fields:
+          - {label: "Headline", name: "headline", widget: "string"}
+          - {label: "Deskripsi", name: "description", widget: "text"}
+          - {label: "Teks Tombol", name: "button_text", widget: "string"}
