@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Tourare | Pengalaman Perjalanan Terkurasi</title>
+    <meta name="description" content="Perjalanan personal bagi mereka yang mencari kedalaman makna melampaui sekadar jarak. Kami merancang perjalanan penuh makna yang menghubungkan Anda dengan jiwa dari setiap destinasi.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&family=Material+Icons+Outlined&display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind CSS (User's choice from design) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#7D8C7B", // Sage Green Accent
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#121212",
+                        "surface-light": "#F9FAFB",
+                        "surface-dark": "#1E1E1E",
+                    },
+                    fontFamily: {
+                        display: ["'Playfair Display'", "serif"],
+                        sans: ["'Inter'", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Smooth image transitions */
+        .img-reveal {
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 1.2s ease;
+        }
+        .group:hover .img-reveal {
+            transform: scale(1.05);
+        }
+
+        /* Glassmorphism utility */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .dark .glass {
+            background: rgba(30, 30, 30, 0.7);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #1e1e1e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #7D8C7B;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7a69;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-slate-100 dark:border-slate-800 transition-all duration-500 h-20 flex items-center" id="navbar">
+        <div class="max-w-[1400px] mx-auto px-8 lg:px-[10%] w-full flex items-center justify-between">
+            <div class="text-2xl font-display font-bold tracking-tight">Tourare.</div>
+            
+            <div class="hidden md:flex items-center space-x-12 text-sm font-medium tracking-wide uppercase text-slate-500 dark:text-slate-400">
+                <a class="hover:text-primary transition-colors relative group" href="#">
+                    Destinasi
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-primary transition-colors relative group" href="#">
+                    Perjalanan
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-primary transition-colors relative group" href="#">
+                    Filosofi
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a class="hover:text-primary transition-colors relative group" href="#">
+                    Jurnal
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+            
+            <div class="flex items-center space-x-6">
+                <button class="material-icons-outlined text-xl hover:text-primary transition-colors" aria-label="Search">search</button>
+                <button class="bg-primary text-white px-6 py-2.5 text-sm font-medium hover:bg-opacity-90 transition-all shadow-lg shadow-primary/20">Konsultasi</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-48 pb-20 px-8 lg:px-[10%] animate-fade-in">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <span class="inline-block text-primary font-bold tracking-[0.3em] uppercase text-[10px] mb-6 animate-slide-up">Pengalaman Terkurasi</span>
+            <h1 class="serif text-5xl md:text-7xl leading-[1.1] mb-8 animate-slide-up" style="animation-delay: 0.1s;">Temukan sudut-sudut paling tenang di penjuru dunia.</h1>
+            <p class="text-slate-500 dark:text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed animate-slide-up" style="animation-delay: 0.2s;">
+                Perjalanan personal bagi mereka yang mencari kedalaman makna melampaui sekadar jarak. Kami merancang perjalanan penuh makna yang menghubungkan Anda dengan jiwa dari setiap destinasi.
+            </p>
+        </div>
+        <div class="w-full h-[500px] overflow-hidden rounded-sm relative shadow-2xl animate-fade-in" style="animation-delay: 0.4s;">
+            <img alt="Serene mountain landscape" class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-1000 scale-105 hover:scale-100" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000"/>
+            <div class="absolute inset-0 bg-black/5"></div>
+        </div>
+    </header>
+
+    <!-- Why Us Section -->
+    <section class="py-24 px-8 lg:px-[10%] bg-white dark:bg-background-dark">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors">
+                        <span class="material-icons-outlined text-primary text-3xl">public</span>
+                    </div>
+                    <h3 class="serif text-xl mb-4">Akses Eksklusif</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Kami membuka pintu ke destinasi tersembunyi dan pengalaman lokal yang tidak akan Anda temukan di panduan wisata manapun.</p>
+                </div>
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors">
+                        <span class="material-icons-outlined text-primary text-3xl">auto_awesome</span>
+                    </div>
+                    <h3 class="serif text-xl mb-4">Kurasi Personal</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Setiap rencana perjalanan dirancang khusus untuk mencerminkan gaya dan keinginan Anda, memastikan setiap detik perjalanan terasa berarti.</p>
+                </div>
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors">
+                        <span class="material-icons-outlined text-primary text-3xl">support_agent</span>
+                    </div>
+                    <h3 class="serif text-xl mb-4">Pendampingan 24/7</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Dari saat Anda berangkat hingga kembali pulang, tim spesialis kami selalu siap memastikan perjalanan Anda berjalan tanpa kendala.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Selection Section -->
+    <section class="py-32 px-8 lg:px-[10%] bg-surface-light dark:bg-background-dark/50">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+            <div class="max-w-xl">
+                <h2 class="serif text-4xl md:text-5xl mb-6">Pilihan Redaksi</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-lg">Kurasi bulanan destinasi kami yang menawarkan perspektif unik tentang kemewahan dan warisan budaya.</p>
+            </div>
+            <a class="text-xs font-bold tracking-widest uppercase border-b-2 border-primary pb-2 hover:text-primary transition-colors" href="#">Lihat Semua Destinasi</a>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+            <!-- Card 1 -->
+            <div class="group cursor-pointer">
+                <div class="overflow-hidden mb-8 aspect-[4/5] rounded-sm relative">
+                    <img alt="Kyoto temple" class="w-full h-full object-cover img-reveal" src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=1000"/>
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+                </div>
+                <div class="flex justify-between items-start mb-3">
+                    <h3 class="serif text-2xl group-hover:text-primary transition-colors">Kyoto</h3>
+                    <span class="text-[10px] font-bold tracking-widest uppercase text-primary bg-primary/10 px-2 py-1">Mulai $4,200</span>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Berabad-abad tradisi yang terjaga dalam taman-taman hening dan arsitektur kayu.</p>
+                <span class="inline-flex items-center text-[10px] font-bold uppercase tracking-[0.2em] group-hover:translate-x-2 transition-transform duration-300">
+                    Jelajahi Pengalaman <span class="material-icons-outlined text-sm ml-2">east</span>
+                </span>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="group cursor-pointer">
+                <div class="overflow-hidden mb-8 aspect-[4/5] rounded-sm relative">
+                    <img alt="Alentejo landscape" class="w-full h-full object-cover img-reveal" src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&q=80&w=1000"/>
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+                </div>
+                <div class="flex justify-between items-start mb-3">
+                    <h3 class="serif text-2xl group-hover:text-primary transition-colors">Alentejo</h3>
+                    <span class="text-[10px] font-bold tracking-widest uppercase text-primary bg-primary/10 px-2 py-1">Mulai $3,800</span>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Dataran emas yang membentang dan hutan gabus di bawah matahari Portugal yang tenang.</p>
+                <span class="inline-flex items-center text-[10px] font-bold uppercase tracking-[0.2em] group-hover:translate-x-2 transition-transform duration-300">
+                    Jelajahi Pengalaman <span class="material-icons-outlined text-sm ml-2">east</span>
+                </span>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="group cursor-pointer">
+                <div class="overflow-hidden mb-8 aspect-[4/5] rounded-sm relative">
+                    <img alt="Dolomites peaks" class="w-full h-full object-cover img-reveal" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=1000"/>
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+                </div>
+                <div class="flex justify-between items-start mb-3">
+                    <h3 class="serif text-2xl group-hover:text-primary transition-colors">Dolomites</h3>
+                    <span class="text-[10px] font-bold tracking-widest uppercase text-primary bg-primary/10 px-2 py-1">Mulai $5,100</span>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Puncak-puncak dramatis dan padang rumput Alpen yang menawarkan ketenangan mendalam dan udara segar.</p>
+                <span class="inline-flex items-center text-[10px] font-bold uppercase tracking-[0.2em] group-hover:translate-x-2 transition-transform duration-300">
+                    Jelajahi Pengalaman <span class="material-icons-outlined text-sm ml-2">east</span>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inclusion Section -->
+    <section class="py-32 px-8 lg:px-[10%]">
+        <div class="max-w-4xl mx-auto border-t border-slate-100 dark:border-slate-800 pt-32">
+            <h2 class="serif text-4xl mb-20 text-center">Apa itu Perjalanan Tourare?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-16">
+                <div>
+                    <h4 class="font-bold tracking-[0.3em] uppercase text-[10px] text-primary mb-10">Layanan Inklusif</h4>
+                    <ul class="space-y-8">
+                        <li class="flex items-start">
+                            <span class="material-icons-outlined text-primary mr-5 mt-0.5">check_circle</span>
+                            <span class="text-slate-600 dark:text-slate-400 leading-relaxed">Akomodasi butik pilihan yang kental dengan warisan budaya lokal.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons-outlined text-primary mr-5 mt-0.5">check_circle</span>
+                            <span class="text-slate-600 dark:text-slate-400 leading-relaxed">Transportasi pribadi dengan kendaraan mewah ramah lingkungan.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons-outlined text-primary mr-5 mt-0.5">check_circle</span>
+                            <span class="text-slate-600 dark:text-slate-400 leading-relaxed">Dukungan concierge 24/7 dari spesialis destinasi lokal kami.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons-outlined text-primary mr-5 mt-0.5">check_circle</span>
+                            <span class="text-slate-600 dark:text-slate-400 leading-relaxed">Pengalaman kuliner terkurasi yang menonjolkan bahan musiman terbaik.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold tracking-[0.3em] uppercase text-[10px] text-slate-400 dark:text-slate-500 mb-10">Tidak Termasuk</h4>
+                    <ul class="space-y-8">
+                        <li class="flex items-start opacity-70">
+                            <span class="material-icons-outlined text-slate-300 dark:text-slate-700 mr-5 mt-0.5">cancel</span>
+                            <span class="text-slate-600 dark:text-slate-400 leading-relaxed">Tiket pesawat internasional menuju dan dari destinasi.</span>
+                        </li>
+                        <li class="flex items-start opacity-70">
+                            <span class="material-icons-outlined text-slate-300 dark:text-slate-700 mr-5 mt-0.5">cancel</span>
+                            <span class="text-slate-600 dark:text-slate-400 leading-relaxed">Asuransi pribadi dan biaya dokumen perjalanan.</span>
+                        </li>
+                        <li class="flex items-start opacity-70">
+                            <span class="material-icons-outlined text-slate-300 dark:text-slate-700 mr-5 mt-0.5">cancel</span>
+                            <span class="text-slate-600 dark:text-slate-400 leading-relaxed">Biaya pengeluaran pribadi dan belanja di luar rencana.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-32 px-8 lg:px-[10%] bg-surface-light dark:bg-surface-dark/10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-20">
+                <span class="inline-block text-primary font-bold tracking-[0.3em] uppercase text-[10px] mb-6">Alur Perjalanan</span>
+                <h2 class="serif text-4xl md:text-5xl">Bagaimana Kami Merancang Mimpi Anda</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+                <div class="flex gap-8 items-start">
+                    <span class="serif text-4xl text-primary/20 shrink-0">01.</span>
+                    <div>
+                        <h4 class="font-bold text-lg mb-3">Konsultasi Personal</h4>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Bicara dengan spesialis destinasi kami tentang preferensi, minat, dan impian perjalanan yang ingin Anda wujudkan.</p>
+                    </div>
+                </div>
+                <div class="flex gap-8 items-start">
+                    <span class="serif text-4xl text-primary/20 shrink-0">02.</span>
+                    <div>
+                        <h4 class="font-bold text-lg mb-3">Proposal Terkurasi</h4>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Kami akan mengirimkan draf rencana perjalanan yang mendetail, mulai dari akomodasi hingga pengalaman unik di lokasi.</p>
+                    </div>
+                </div>
+                <div class="flex gap-8 items-start">
+                    <span class="serif text-4xl text-primary/20 shrink-0">03.</span>
+                    <div>
+                        <h4 class="font-bold text-lg mb-3">Penyempurnaan</h4>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Kami menyesuaikan kembali setiap detail hingga rencana tersebut benar-benar sempurna dan sesuai dengan ekspektasi Anda.</p>
+                    </div>
+                </div>
+                <div class="flex gap-8 items-start">
+                    <span class="serif text-4xl text-primary/20 shrink-0">04.</span>
+                    <div>
+                        <h4 class="font-bold text-lg mb-3">Keberangkatan</h4>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Anda berangkat dengan tenang. Seluruh logistik dan detail teknis sudah kami tangani dengan sempurna.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="py-40 px-8 lg:px-[10%] bg-slate-50 dark:bg-surface-dark/30 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full -mr-48 -mt-48 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full -ml-48 -mb-48 blur-3xl"></div>
+        
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <span class="material-icons-outlined text-6xl text-primary/20 mb-10 italic">format_quote</span>
+            <blockquote class="serif text-3xl md:text-5xl leading-[1.3] mb-16 italic">
+                "Perjalanan kami ke pedesaan Jepang bukan sekadar liburan; itu adalah momen untuk kembali ke kesederhanaan. Tourare memahami bahwa kemewahan tertinggi sering kali ditemukan dalam keheningan."
+            </blockquote>
+            <div class="flex flex-col items-center">
+                <img alt="Marcus Thompson" class="w-20 h-20 rounded-full object-cover mb-6 ring-4 ring-white dark:ring-slate-800 shadow-xl" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200"/>
+                <h5 class="font-bold text-base tracking-wide">Marcus Thompson</h5>
+                <p class="text-[10px] text-slate-400 uppercase tracking-[0.3em] mt-2">Perjalanan Kyoto, 2023</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journal Section -->
+    <section class="py-32 px-8 lg:px-[10%]">
+        <div class="max-w-4xl mx-auto text-center mb-24">
+            <h2 class="serif text-4xl md:text-5xl mb-6">Jurnal Kami</h2>
+            <p class="text-slate-500 text-lg">Kisah tentang perjalanan, budaya, dan seni dalam berkelana.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20 max-w-6xl mx-auto">
+            <div class="group">
+                <div class="aspect-[16/10] overflow-hidden mb-10 rounded-sm shadow-xl">
+                    <img alt="Mountain fog" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=1200"/>
+                </div>
+                <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-primary">Filosofi</span>
+                <h3 class="serif text-3xl mt-5 mb-5 group-hover:text-primary transition-colors">Seni Melambat: Mengapa Slow Travel Itu Penting</h3>
+                <p class="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed text-base">Mengapa terburu-buru dalam rencana perjalanan adalah cara tercepat untuk melewatkan keindahan sejati suatu destinasi.</p>
+                <a class="text-[10px] font-bold tracking-[0.2em] uppercase border-b-2 border-slate-900 dark:border-slate-100 pb-2 hover:border-primary hover:text-primary transition-all inline-block" href="#">Baca Selengkapnya</a>
+            </div>
+            <div class="group">
+                <div class="aspect-[16/10] overflow-hidden mb-10 rounded-sm shadow-xl">
+                    <img alt="Urban Tokyo" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" src="https://images.unsplash.com/photo-1540959733332-e946fbfbe6f3?auto=format&fit=crop&q=80&w=1200"/>
+                </div>
+                <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-primary">Panduan Destinasi</span>
+                <h3 class="serif text-3xl mt-5 mb-5 group-hover:text-primary transition-colors">Menemukan Keheningan di Tokyo</h3>
+                <p class="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed text-base">Menjelajahi kota tersibuk di dunia sambil tetap menjaga ketenangan batin dan semangat penemuan.</p>
+                <a class="text-[10px] font-bold tracking-[0.2em] uppercase border-b-2 border-slate-900 dark:border-slate-100 pb-2 hover:border-primary hover:text-primary transition-all inline-block" href="#">Baca Selengkapnya</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-32 px-8 lg:px-[10%] bg-white dark:bg-background-dark overflow-hidden relative">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="serif text-5xl md:text-7xl mb-10 leading-tight">Siap menulis bab baru dalam cerita Anda?</h2>
+            <p class="text-slate-500 dark:text-slate-400 text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
+                Biarkan kami merancang perjalanan yang tidak hanya mengisi album foto Anda, tetapi juga menyentuh jiwa Anda. Konsultasikan rencana perjalanan impian Anda hari ini.
+            </p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                <button class="bg-primary text-white px-10 py-4 text-sm font-medium hover:bg-opacity-90 transition-all shadow-xl shadow-primary/20 uppercase tracking-widest">Mulai Konsultasi</button>
+                <a href="#" class="text-xs font-bold tracking-widest uppercase border-b-2 border-slate-200 hover:border-primary transition-colors pb-1">Lihat Brosur Digital</a>
+            </div>
+        </div>
+        <!-- Decorative element -->
+        <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-background-light dark:bg-background-dark border-t border-slate-100 dark:border-slate-800 pt-32 pb-16 px-8 lg:px-[10%]">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="text-3xl font-display font-bold tracking-tight mb-10">Tourare.</div>
+                    <p class="text-slate-500 dark:text-slate-400 max-w-sm leading-relaxed text-base text-balance">
+                        Merancang pengalaman perjalanan penuh makna bagi petualang yang mementingkan kualitas. Misi kami adalah menghubungkan kembali manusia dengan ritme lambat bumi.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold tracking-[0.3em] uppercase text-[10px] mb-10 text-slate-400">Navigasi</h4>
+                    <ul class="space-y-5 text-sm font-medium">
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Tentang Kami</a></li>
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Perjalanan Pribadi</a></li>
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Koleksi Grup</a></li>
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold tracking-[0.3em] uppercase text-[10px] mb-10 text-slate-400">Ikuti Kami</h4>
+                    <ul class="space-y-5 text-sm font-medium">
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Instagram</a></li>
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Pinterest</a></li>
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Vimeo</a></li>
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Substack</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-slate-50 dark:border-slate-900 gap-8">
+                <p class="text-[10px] tracking-[0.2em] uppercase text-slate-400">© 2024 Tourare Travel Agency. Hak Cipta Dilindungi Undang-Undang.</p>
+                <div class="flex space-x-10 text-[10px] tracking-[0.2em] uppercase text-slate-400">
+                    <a class="hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Privasi</a>
+                    <a class="hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Ketentuan</a>
+                    <a class="hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Cookie</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Toggle -->
+    <button id="theme-toggle" class="fixed bottom-8 right-8 w-14 h-14 rounded-full glass shadow-2xl flex items-center justify-center border border-slate-100 dark:border-slate-800 z-[100] group transition-all hover:scale-110 active:scale-95" aria-label="Toggle Dark Mode">
+        <span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors" id="theme-icon">dark_mode</span>
+    </button>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeIcon.innerText = 'light_mode';
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeIcon.innerText = 'dark_mode';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+                themeIcon.innerText = 'light_mode';
+            } else {
+                localStorage.theme = 'light';
+                themeIcon.innerText = 'dark_mode';
+            }
+        });
+
+        // Navbar Scroll Effect
+        const nav = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('h-16', 'shadow-sm');
+                nav.classList.remove('h-20');
+            } else {
+                nav.classList.add('h-20');
+                nav.classList.remove('h-16', 'shadow-sm');
+            }
+        });
+    </script>
+</body>
+</html>
