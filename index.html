@@ -434,36 +434,31 @@
                 document.getElementById('hero-description').innerText = heroData.description;
                 document.getElementById('hero-image').src = heroData.image;
 
-                // Load Destinations (Contoh manual untuk starter, idealnya ada daftar file)
-                const destinationFiles = ['kyoto.json', 'alentejo.json', 'dolomites.json'];
+                // Load Destinations Dinamis
+                const destRes = await fetch('/data/destinations.json');
+                const destData = await destRes.json();
                 const container = document.getElementById('destinations-container');
                 container.innerHTML = ''; // Kosongkan dulu
 
-                for (const file of destinationFiles) {
-                    try {
-                        const res = await fetch(`/data/destinations/${file}`);
-                        if (!res.ok) continue;
-                        const item = await res.json();
-                        
-                        const card = `
-                            <div class="group cursor-pointer">
-                                <div class="overflow-hidden mb-8 aspect-[4/5] rounded-sm relative">
-                                    <img alt="${item.title}" class="w-full h-full object-cover img-reveal" src="${item.image}"/>
-                                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
-                                </div>
-                                <div class="flex justify-between items-start mb-3">
-                                    <h3 class="serif text-2xl group-hover:text-primary transition-colors">${item.title}</h3>
-                                    <span class="text-[10px] font-bold tracking-widest uppercase text-primary bg-primary/10 px-2 py-1">${item.price}</span>
-                                </div>
-                                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">${item.description}</p>
-                                <span class="inline-flex items-center text-[10px] font-bold uppercase tracking-[0.2em] group-hover:translate-x-2 transition-transform duration-300">
-                                    Jelajahi Pengalaman <span class="material-icons-outlined text-sm ml-2">east</span>
-                                </span>
+                destData.items.forEach(item => {
+                    const card = `
+                        <div class="group cursor-pointer">
+                            <div class="overflow-hidden mb-8 aspect-[4/5] rounded-sm relative">
+                                <img alt="${item.title}" class="w-full h-full object-cover img-reveal" src="${item.image}"/>
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
                             </div>
-                        `;
-                        container.innerHTML += card;
-                    } catch (e) { console.error("Error loading destination:", file); }
-                }
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="serif text-2xl group-hover:text-primary transition-colors">${item.title}</h3>
+                                <span class="text-[10px] font-bold tracking-widest uppercase text-primary bg-primary/10 px-2 py-1">${item.price}</span>
+                            </div>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">${item.description}</p>
+                            <span class="inline-flex items-center text-[10px] font-bold uppercase tracking-[0.2em] group-hover:translate-x-2 transition-transform duration-300">
+                                Jelajahi Pengalaman <span class="material-icons-outlined text-sm ml-2">east</span>
+                            </span>
+                        </div>
+                    `;
+                    container.innerHTML += card;
+                });
             } catch (error) {
                 console.error("Error loading CMS data:", error);
             }
