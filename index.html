@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&family=Material+Icons+Outlined&display=swap" rel="stylesheet"/>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     
     <!-- Tailwind CSS (User's choice from design) -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
@@ -131,14 +132,14 @@
     <!-- Hero Section -->
     <header class="pt-48 pb-20 px-8 lg:px-[10%] animate-fade-in">
         <div class="max-w-4xl mx-auto text-center mb-16">
-            <span class="inline-block text-primary font-bold tracking-[0.3em] uppercase text-[10px] mb-6 animate-slide-up">Pengalaman Terkurasi</span>
-            <h1 class="serif text-5xl md:text-7xl leading-[1.1] mb-8 animate-slide-up" style="animation-delay: 0.1s;">Temukan sudut-sudut paling tenang di penjuru dunia.</h1>
-            <p class="text-slate-500 dark:text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed animate-slide-up" style="animation-delay: 0.2s;">
+            <span id="hero-tagline" class="inline-block text-primary font-bold tracking-[0.3em] uppercase text-[10px] mb-6 animate-slide-up">Pengalaman Terkurasi</span>
+            <h1 id="hero-title" class="serif text-5xl md:text-7xl leading-[1.1] mb-8 animate-slide-up" style="animation-delay: 0.1s;">Temukan sudut-sudut paling tenang di penjuru dunia.</h1>
+            <p id="hero-description" class="text-slate-500 dark:text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed animate-slide-up" style="animation-delay: 0.2s;">
                 Perjalanan personal bagi mereka yang mencari kedalaman makna melampaui sekadar jarak. Kami merancang perjalanan penuh makna yang menghubungkan Anda dengan jiwa dari setiap destinasi.
             </p>
         </div>
         <div class="w-full h-[500px] overflow-hidden rounded-sm relative shadow-2xl animate-fade-in" style="animation-delay: 0.4s;">
-            <img alt="Serene mountain landscape" class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-1000 scale-105 hover:scale-100" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000"/>
+            <img id="hero-image" alt="Serene landscape" class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-1000 scale-105 hover:scale-100" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000"/>
             <div class="absolute inset-0 bg-black/5"></div>
         </div>
     </header>
@@ -184,54 +185,8 @@
             <a class="text-xs font-bold tracking-widest uppercase border-b-2 border-primary pb-2 hover:text-primary transition-colors" href="#">Lihat Semua Destinasi</a>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-            <!-- Card 1 -->
-            <div class="group cursor-pointer">
-                <div class="overflow-hidden mb-8 aspect-[4/5] rounded-sm relative">
-                    <img alt="Kyoto temple" class="w-full h-full object-cover img-reveal" src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=1000"/>
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
-                </div>
-                <div class="flex justify-between items-start mb-3">
-                    <h3 class="serif text-2xl group-hover:text-primary transition-colors">Kyoto</h3>
-                    <span class="text-[10px] font-bold tracking-widest uppercase text-primary bg-primary/10 px-2 py-1">Mulai $4,200</span>
-                </div>
-                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Berabad-abad tradisi yang terjaga dalam taman-taman hening dan arsitektur kayu.</p>
-                <span class="inline-flex items-center text-[10px] font-bold uppercase tracking-[0.2em] group-hover:translate-x-2 transition-transform duration-300">
-                    Jelajahi Pengalaman <span class="material-icons-outlined text-sm ml-2">east</span>
-                </span>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="group cursor-pointer">
-                <div class="overflow-hidden mb-8 aspect-[4/5] rounded-sm relative">
-                    <img alt="Alentejo landscape" class="w-full h-full object-cover img-reveal" src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&q=80&w=1000"/>
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
-                </div>
-                <div class="flex justify-between items-start mb-3">
-                    <h3 class="serif text-2xl group-hover:text-primary transition-colors">Alentejo</h3>
-                    <span class="text-[10px] font-bold tracking-widest uppercase text-primary bg-primary/10 px-2 py-1">Mulai $3,800</span>
-                </div>
-                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Dataran emas yang membentang dan hutan gabus di bawah matahari Portugal yang tenang.</p>
-                <span class="inline-flex items-center text-[10px] font-bold uppercase tracking-[0.2em] group-hover:translate-x-2 transition-transform duration-300">
-                    Jelajahi Pengalaman <span class="material-icons-outlined text-sm ml-2">east</span>
-                </span>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="group cursor-pointer">
-                <div class="overflow-hidden mb-8 aspect-[4/5] rounded-sm relative">
-                    <img alt="Dolomites peaks" class="w-full h-full object-cover img-reveal" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=1000"/>
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
-                </div>
-                <div class="flex justify-between items-start mb-3">
-                    <h3 class="serif text-2xl group-hover:text-primary transition-colors">Dolomites</h3>
-                    <span class="text-[10px] font-bold tracking-widest uppercase text-primary bg-primary/10 px-2 py-1">Mulai $5,100</span>
-                </div>
-                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Puncak-puncak dramatis dan padang rumput Alpen yang menawarkan ketenangan mendalam dan udara segar.</p>
-                <span class="inline-flex items-center text-[10px] font-bold uppercase tracking-[0.2em] group-hover:translate-x-2 transition-transform duration-300">
-                    Jelajahi Pengalaman <span class="material-icons-outlined text-sm ml-2">east</span>
-                </span>
-            </div>
+        <div id="destinations-container" class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+            <!-- Data destinasi akan muncul di sini secara otomatis -->
         </div>
     </section>
 
@@ -466,6 +421,65 @@
                 nav.classList.remove('h-16', 'shadow-sm');
             }
         });
+    </script>
+    <script>
+        // CMS Data Loading
+        async function loadCMSData() {
+            try {
+                // Load Hero Data
+                const heroRes = await fetch('/data/hero.json');
+                const heroData = await heroRes.json();
+                document.getElementById('hero-tagline').innerText = heroData.tagline;
+                document.getElementById('hero-title').innerText = heroData.title;
+                document.getElementById('hero-description').innerText = heroData.description;
+                document.getElementById('hero-image').src = heroData.image;
+
+                // Load Destinations (Contoh manual untuk starter, idealnya ada daftar file)
+                const destinationFiles = ['kyoto.json', 'alentejo.json', 'dolomites.json'];
+                const container = document.getElementById('destinations-container');
+                container.innerHTML = ''; // Kosongkan dulu
+
+                for (const file of destinationFiles) {
+                    try {
+                        const res = await fetch(`/data/destinations/${file}`);
+                        if (!res.ok) continue;
+                        const item = await res.json();
+                        
+                        const card = `
+                            <div class="group cursor-pointer">
+                                <div class="overflow-hidden mb-8 aspect-[4/5] rounded-sm relative">
+                                    <img alt="${item.title}" class="w-full h-full object-cover img-reveal" src="${item.image}"/>
+                                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+                                </div>
+                                <div class="flex justify-between items-start mb-3">
+                                    <h3 class="serif text-2xl group-hover:text-primary transition-colors">${item.title}</h3>
+                                    <span class="text-[10px] font-bold tracking-widest uppercase text-primary bg-primary/10 px-2 py-1">${item.price}</span>
+                                </div>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">${item.description}</p>
+                                <span class="inline-flex items-center text-[10px] font-bold uppercase tracking-[0.2em] group-hover:translate-x-2 transition-transform duration-300">
+                                    Jelajahi Pengalaman <span class="material-icons-outlined text-sm ml-2">east</span>
+                                </span>
+                            </div>
+                        `;
+                        container.innerHTML += card;
+                    } catch (e) { console.error("Error loading destination:", file); }
+                }
+            } catch (error) {
+                console.error("Error loading CMS data:", error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadCMSData);
+
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
     </script>
 </body>
 </html>
