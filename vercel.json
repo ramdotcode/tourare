@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/admin",
+      "destination": "https://tourare.netlify.app/admin",
+      "permanent": false
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "https://tourare.netlify.app/admin/:path*",
+      "permanent": false
+    }
+  ]
+}
