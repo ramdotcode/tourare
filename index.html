@@ -60,6 +60,22 @@
             font-family: 'Playfair Display', serif;
         }
         
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
         /* Smooth image transitions */
         .img-reveal {
             transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 1.2s ease;
@@ -124,7 +140,7 @@
             
             <div class="flex items-center space-x-6">
                 <button class="material-icons-outlined text-xl hover:text-primary transition-colors" aria-label="Search">search</button>
-                <button class="bg-primary text-white px-6 py-2.5 text-sm font-medium hover:bg-opacity-90 transition-all shadow-lg shadow-primary/20">Konsultasi</button>
+                <a href="https://wa.me/6281234567890?text=Halo%20Tourare,%20saya%20ingin%20konsultasi%20mengenai%20perjalanan%20saya." target="_blank" class="bg-primary text-white px-6 py-2.5 text-sm font-medium hover:bg-opacity-90 transition-all shadow-lg shadow-primary/20">Konsultasi</a>
             </div>
         </div>
     </nav>
@@ -173,9 +189,9 @@
     <!-- Inclusion Section -->
     <section class="py-32 px-8 lg:px-[10%]">
         <div class="max-w-4xl mx-auto border-t border-slate-100 dark:border-slate-800 pt-32">
-            <h2 class="serif text-4xl mb-20 text-center">Apa itu Perjalanan Tourare?</h2>
+            <h2 class="serif text-4xl mb-20 text-center reveal">Apa itu Perjalanan Tourare?</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-16">
-                <div>
+                <div class="reveal reveal-delay-1">
                     <h4 class="font-bold tracking-[0.3em] uppercase text-[10px] text-primary mb-10">Layanan Inklusif</h4>
                     <ul class="space-y-8">
                         <li class="flex items-start">
@@ -196,7 +212,7 @@
                         </li>
                     </ul>
                 </div>
-                <div>
+                <div class="reveal reveal-delay-2">
                     <h4 class="font-bold tracking-[0.3em] uppercase text-[10px] text-slate-400 dark:text-slate-500 mb-10">Tidak Termasuk</h4>
                     <ul class="space-y-8">
                         <li class="flex items-start opacity-70">
@@ -220,7 +236,7 @@
     <!-- How It Works Section -->
     <section class="py-32 px-8 lg:px-[10%] bg-surface-light dark:bg-surface-dark/10">
         <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-20">
+            <div class="text-center mb-20 reveal">
                 <span id="how-it-works-tagline" class="inline-block text-primary font-bold tracking-[0.3em] uppercase text-[10px] mb-6">Alur Perjalanan</span>
                 <h2 id="how-it-works-title" class="serif text-4xl md:text-5xl">Bagaimana Kami Merancang Mimpi Anda</h2>
             </div>
@@ -237,11 +253,11 @@
         <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full -ml-48 -mb-48 blur-3xl"></div>
         
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <span class="material-icons-outlined text-6xl text-primary/20 mb-10 italic">format_quote</span>
-            <blockquote id="testi-quote" class="serif text-3xl md:text-5xl leading-[1.3] mb-16 italic">
+            <span class="material-icons-outlined text-6xl text-primary/20 mb-10 italic reveal">format_quote</span>
+            <blockquote id="testi-quote" class="serif text-3xl md:text-5xl leading-[1.3] mb-16 italic reveal reveal-delay-1">
                 <!-- Dinamis -->
             </blockquote>
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center reveal reveal-delay-2">
                 <img id="testi-image" alt="Author" class="w-20 h-20 rounded-full object-cover mb-6 ring-4 ring-white dark:ring-slate-800 shadow-xl" src=""/>
                 <h5 id="testi-author" class="font-bold text-base tracking-wide"></h5>
                 <p id="testi-role" class="text-[10px] text-slate-400 uppercase tracking-[0.3em] mt-2"></p>
@@ -251,12 +267,12 @@
 
     <!-- Journal Section -->
     <section class="py-32 px-8 lg:px-[10%]">
-        <div class="max-w-4xl mx-auto text-center mb-24">
+        <div class="max-w-4xl mx-auto text-center mb-24 reveal">
             <h2 class="serif text-4xl md:text-5xl mb-6">Jurnal Kami</h2>
             <p class="text-slate-500 text-lg">Kisah tentang perjalanan, budaya, dan seni dalam berkelana.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-20 max-w-6xl mx-auto">
-            <div class="group">
+            <div class="group reveal reveal-delay-1">
                 <div class="aspect-[16/10] overflow-hidden mb-10 rounded-sm shadow-xl">
                     <img alt="Mountain fog" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=1200"/>
                 </div>
@@ -265,9 +281,9 @@
                 <p class="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed text-base">Mengapa terburu-buru dalam rencana perjalanan adalah cara tercepat untuk melewatkan keindahan sejati suatu destinasi.</p>
                 <a class="text-[10px] font-bold tracking-[0.2em] uppercase border-b-2 border-slate-900 dark:border-slate-100 pb-2 hover:border-primary hover:text-primary transition-all inline-block" href="#">Baca Selengkapnya</a>
             </div>
-            <div class="group">
+            <div class="group reveal reveal-delay-2">
                 <div class="aspect-[16/10] overflow-hidden mb-10 rounded-sm shadow-xl">
-                    <img alt="Urban Tokyo" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" src="https://images.unsplash.com/photo-1540959733332-e946fbfbe6f3?auto=format&fit=crop&q=80&w=1200"/>
+                    <img alt="Serene Tokyo Temple" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&q=80&w=1200"/>
                 </div>
                 <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-primary">Panduan Destinasi</span>
                 <h3 class="serif text-3xl mt-5 mb-5 group-hover:text-primary transition-colors">Menemukan Keheningan di Tokyo</h3>
@@ -278,13 +294,13 @@
     </section>
 
     <!-- Final CTA Section -->
-    <section class="py-32 px-8 lg:px-[10%] bg-white dark:bg-background-dark overflow-hidden relative">
+    <section class="py-32 px-8 lg:px-[10%] bg-white dark:bg-background-dark overflow-hidden relative reveal">
         <div class="max-w-4xl mx-auto text-center relative z-10">
             <h2 id="cta-headline" class="serif text-5xl md:text-7xl mb-10 leading-tight"></h2>
             <p id="cta-description" class="text-slate-500 dark:text-slate-400 text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
             </p>
             <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-                <button id="cta-button" class="bg-primary text-white px-10 py-4 text-sm font-medium hover:bg-opacity-90 transition-all shadow-xl shadow-primary/20 uppercase tracking-widest"></button>
+                <a href="https://wa.me/6281234567890?text=Halo%20Tourare,%20saya%20tertarik%20untuk%20konsultasi%20perjalanan%20eksklusif." target="_blank" id="cta-button" class="bg-primary text-white px-10 py-4 text-sm font-medium hover:bg-opacity-90 transition-all shadow-xl shadow-primary/20 uppercase tracking-widest flex items-center justify-center"></a>
                 <a href="#" class="text-xs font-bold tracking-widest uppercase border-b-2 border-slate-200 hover:border-primary transition-colors pb-1">Lihat Brosur Digital</a>
             </div>
         </div>
@@ -375,6 +391,28 @@
         });
     </script>
     <script>
+        // Scroll Reveal Logic
+        function initScrollReveal() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Optional: unobserve after reveal
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
         // CMS Data Loading
         async function loadCMSData() {
             try {
@@ -395,10 +433,11 @@
                 // Kita ambil manual dest1, dest2, dest3
                 const items = [destData.dest1, destData.dest2, destData.dest3];
                 
-                items.forEach(item => {
+                items.forEach((item, index) => {
                     if(!item) return;
+                    const cardId = `dest${index + 1}`;
                     const card = `
-                        <div class="group cursor-pointer">
+                        <a href="/destination.html?id=${cardId}" class="group cursor-pointer reveal reveal-delay-${index + 1}">
                             <div class="overflow-hidden mb-8 aspect-[4/5] rounded-sm relative">
                                 <img alt="${item.title}" class="w-full h-full object-cover img-reveal" src="${item.image}"/>
                                 <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
@@ -411,7 +450,7 @@
                             <span class="inline-flex items-center text-[10px] font-bold uppercase tracking-[0.2em] group-hover:translate-x-2 transition-transform duration-300">
                                 Jelajahi Pengalaman <span class="material-icons-outlined text-sm ml-2">east</span>
                             </span>
-                        </div>
+                        </a>
                     `;
                     container.innerHTML += card;
                 });
@@ -420,8 +459,8 @@
                 const whyRes = await fetch('/data/why-us.json');
                 const whyData = await whyRes.json();
                 const whyContainer = document.getElementById('why-us-container');
-                whyContainer.innerHTML = whyData.features.map(f => `
-                    <div class="flex flex-col items-center text-center group">
+                whyContainer.innerHTML = whyData.features.map((f, index) => `
+                    <div class="flex flex-col items-center text-center group reveal reveal-delay-${index + 1}">
                         <div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors">
                             <span class="material-icons-outlined text-primary text-3xl">${f.icon}</span>
                         </div>
@@ -435,8 +474,8 @@
                 const howData = await howRes.json();
                 document.getElementById('how-it-works-tagline').innerText = howData.tagline;
                 document.getElementById('how-it-works-title').innerText = howData.title;
-                document.getElementById('how-it-works-steps').innerHTML = howData.steps.map(s => `
-                    <div class="flex gap-8 items-start">
+                document.getElementById('how-it-works-steps').innerHTML = howData.steps.map((s, index) => `
+                    <div class="flex gap-8 items-start reveal reveal-delay-${(index % 2) + 1}">
                         <span class="serif text-4xl text-primary/20 shrink-0">${s.number}</span>
                         <div>
                             <h4 class="font-bold text-lg mb-3">${s.title}</h4>
@@ -459,6 +498,9 @@
                 document.getElementById('cta-headline').innerText = ctaData.headline;
                 document.getElementById('cta-description').innerText = ctaData.description;
                 document.getElementById('cta-button').innerText = ctaData.button_text;
+
+                // Initialize Scroll Reveal after all data is loaded
+                initScrollReveal();
 
             } catch (error) {
                 console.error("Error loading CMS data:", error);

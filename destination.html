@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title id="page-title">Detail Destinasi | Tourare</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&family=Material+Icons+Outlined&display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#7D8C7B",
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#121212",
+                        "surface-light": "#F9FAFB",
+                        "surface-dark": "#1E1E1E",
+                    },
+                    fontFamily: {
+                        display: ["'Playfair Display'", "serif"],
+                        sans: ["'Inter'", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .dark .glass { background: rgba(30, 30, 30, 0.7); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-slate-100 dark:border-slate-800 h-20 flex items-center">
+        <div class="max-w-[1400px] mx-auto px-8 lg:px-[10%] w-full flex items-center justify-between">
+            <a href="/" class="text-2xl font-display font-bold tracking-tight">Tourare.</a>
+            <div class="flex items-center space-x-6">
+                <a href="/" class="text-xs font-bold tracking-widest uppercase hover:text-primary transition-colors flex items-center">
+                    <span class="material-icons-outlined text-sm mr-2">west</span> Kembali
+                </a>
+                <a href="https://wa.me/6281234567890" target="_blank" class="bg-primary text-white px-6 py-2.5 text-sm font-medium hover:bg-opacity-90 transition-all shadow-lg shadow-primary/20">Konsultasi</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Destination Hero -->
+    <header class="relative h-[70vh] w-full overflow-hidden">
+        <img id="dest-image" src="" alt="" class="w-full h-full object-cover"/>
+        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+            <div class="text-center px-8">
+                <span id="dest-price-tag" class="inline-block text-white/80 font-bold tracking-[0.3em] uppercase text-[10px] mb-6 reveal"></span>
+                <h1 id="dest-title" class="serif text-5xl md:text-8xl text-white md:leading-[1.1] mb-8 reveal"></h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="py-24 px-8 lg:px-[10%]">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <div class="md:col-span-2">
+                    <h2 class="serif text-3xl mb-8">Tentang Perjalanan</h2>
+                    <p id="dest-desc" class="text-slate-500 dark:text-slate-400 text-lg leading-relaxed mb-12"></p>
+                    
+                    <div class="space-y-12">
+                        <section>
+                            <h3 class="font-bold tracking-[0.2em] uppercase text-xs text-primary mb-12">Rencana Perjalanan</h3>
+                            <div id="itinerary-container" class="space-y-12 relative before:absolute before:left-3 before:top-2 before:bottom-2 before:w-[1px] before:bg-slate-100 dark:before:bg-slate-800">
+                                <!-- Dinamis -->
+                            </div>
+                        </section>
+
+                        <section>
+                            <h3 class="font-bold tracking-[0.2em] uppercase text-xs text-primary mb-6">Sorotan Pengalaman</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <span class="material-icons-outlined text-primary mr-4">spa</span>
+                                    <span class="text-slate-600 dark:text-slate-400">Penginapan di butik hotel pilihan dengan nuansa lokal yang kental.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons-outlined text-primary mr-4">restaurant</span>
+                                    <span class="text-slate-600 dark:text-slate-400">Jamuan makan malam privat dengan menu kurasi chef lokal.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons-outlined text-primary mr-4">explore</span>
+                                    <span class="text-slate-600 dark:text-slate-400">Panduan pribadi dari ahli budaya dan sejarah setempat.</span>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="bg-surface-light dark:bg-surface-dark p-8 rounded-sm border border-slate-100 dark:border-slate-800">
+                        <h4 class="font-bold text-xs uppercase tracking-widest mb-6">Informasi Harga</h4>
+                        <div class="flex items-baseline gap-2 mb-2">
+                            <span class="text-sm text-slate-400 uppercase tracking-tighter">Mulai dari</span>
+                        </div>
+                        <div id="dest-price-big" class="serif text-3xl text-primary mb-8"></div>
+                        <a href="https://wa.me/6281234567890" target="_blank" class="block w-full bg-primary text-white text-center py-4 text-xs font-bold uppercase tracking-widest hover:bg-opacity-90 transition-all">Pesan Sekarang</a>
+                        <p class="text-[10px] text-slate-400 mt-4 text-center">Harga dapat berubah sewaktu-waktu tergantung musim dan ketersediaan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer copied from index.html for consistency -->
+    <footer class="bg-background-light dark:bg-background-dark border-t border-slate-100 dark:border-slate-800 pt-20 pb-16 px-8 lg:px-[10%]">
+        <div class="max-w-[1400px] mx-auto text-center">
+            <div class="text-2xl font-display font-bold tracking-tight mb-8">Tourare.</div>
+            <p class="text-[10px] tracking-[0.2em] uppercase text-slate-400">© 2024 Tourare Travel Agency. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Logic
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+
+        // Scroll Reveal
+        function initReveal() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        // Load Data
+        async function loadDetail() {
+            const params = new URLSearchParams(window.location.search);
+            const destId = params.get('id');
+            if(!destId) return window.location.href = '/';
+
+            try {
+                const res = await fetch('/data/destinations.json');
+                const data = await res.json();
+                const item = data[destId];
+
+                if(!item) return window.location.href = '/';
+
+                document.title = `${item.title} | Tourare`;
+                document.getElementById('dest-title').innerText = item.title;
+                document.getElementById('dest-price-tag').innerText = item.price;
+                document.getElementById('dest-price-big').innerText = item.price;
+                document.getElementById('dest-desc').innerText = item.description;
+                document.getElementById('dest-image').src = item.image;
+                document.getElementById('dest-image').alt = item.title;
+
+                // Render Itinerary
+                const itineraryContainer = document.getElementById('itinerary-container');
+                if (item.itinerary && item.itinerary.length > 0) {
+                    itineraryContainer.innerHTML = item.itinerary.map((step, idx) => `
+                        <div class="relative pl-12 reveal" style="transition-delay: ${idx * 0.1}s">
+                            <div class="absolute left-0 top-0 w-6 h-6 rounded-full bg-white dark:bg-background-dark border-2 border-primary z-10 flex items-center justify-center">
+                                <span class="text-[10px] font-bold text-primary">${idx + 1}</span>
+                            </div>
+                            <div class="mb-2 flex items-center justify-between">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">${step.day}</span>
+                            </div>
+                            <h4 class="serif text-xl mb-3">${step.title}</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">${step.activity}</p>
+                        </div>
+                    `).join('');
+                }
+
+                initReveal();
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadDetail);
+    </script>
+</body>
+</html>

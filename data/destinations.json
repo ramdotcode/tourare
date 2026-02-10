@@ -1,20 +1,91 @@
 {
   "dest1": {
     "title": "Kyoto",
-    "price": "Mulai $4,200",
+    "price": "Mulai Rp 18.500.000",
     "description": "Berabad-abad tradisi yang terjaga dalam taman-taman hening dan arsitektur kayu.",
-    "image": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=1000"
+    "image": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=1000",
+    "itinerary": [
+      {
+        "day": "Hari 1",
+        "title": "Kedatangan di Kyoto",
+        "activity": "Penjemputan pribadi di Bandara Kansai dan check-in di Ryokan tradisional di distrik bersejarah."
+      },
+      {
+        "day": "Hari 2",
+        "title": "Ketenangan Arashiyama",
+        "activity": "Berjalan menyusuri hutan bambu saat fajar dan meditasi pagi di kuil Tenryu-ji."
+      },
+      {
+        "day": "Hari 3",
+        "title": "Filosofi & Seni Minum Teh",
+        "activity": "Menyusuri Jalur Filosofi (Philosopher's Path) dan mengikuti upacara minum teh privat."
+      },
+      {
+        "day": "Hari 4",
+        "title": "Eksplorasi Nara",
+        "activity": "Perjalanan harian ke Nara untuk melihat rusa suci dan kuil kayu Todai-ji yang megah."
+      },
+      {
+        "day": "Hari 5",
+        "title": "Kuil Emas & Kebun Zen",
+        "activity": "Kunjungan ke Kinkaku-ji (Kuil Emas) dan belajar tentang seni taman batu Zen di Ryoan-ji."
+      },
+      {
+        "day": "Hari 6",
+        "title": "Distrik Gion & Kuliner Kaiseki",
+        "activity": "Menjelajahi gang-gang sempit Gion dan menikmati jamuan makan malam Kaiseki yang autentik."
+      },
+      {
+        "day": "Hari 7",
+        "title": "Belanja Souvenir & Keberangkatan",
+        "activity": "Waktu luang untuk belanja di pasar Nishiki sebelum pengantaran kembali ke bandara."
+      }
+    ]
   },
   "dest2": {
     "title": "Alentejo",
-    "price": "Mulai $3,800",
+    "price": "Mulai Rp 15.800.000",
     "description": "Dataran emas yang membentang dan hutan gabus di bawah matahari Portugal yang tenang.",
-    "image": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&q=80&w=1000"
+    "image": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&q=80&w=1000",
+    "itinerary": [
+      {
+        "day": "Hari 1",
+        "title": "Eksplorasi Évora",
+        "activity": "Menjelajahi peninggalan Romawi di Évora, kota warisan dunia UNESCO, dan mencicipi anggur lokal di perkebunan bersejarah."
+      },
+      {
+        "day": "Hari 2",
+        "title": "Alam & Hutan Gabus",
+        "activity": "Piknik mewah di tengah hutan gabus yang tenang dan berjalan santai menyusuri perbukitan Alentejo yang keemasan."
+      },
+      {
+        "day": "Hari 3",
+        "title": "Relaksasi Pedesaan",
+        "activity": "Pagi yang santai di penginapan butik dan makan siang perpisahan dengan hidangan autentik khas Portugal sebelum kembali ke Lisbon."
+      }
+    ]
   },
   "dest3": {
     "title": "Dolomites",
-    "price": "Mulai $5,100",
+    "price": "Mulai Rp 19.200.000",
     "description": "Puncak-puncak dramatis dan padang rumput Alpen yang menawarkan ketenangan mendalam dan udara segar.",
-    "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=1000"
+    "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=1000",
+    "itinerary": [
+      {
+        "day": "Hari 1",
+        "title": "Danau Braies yang Puitis",
+        "activity": "Berjalan santai di tepi Danau Braies yang ikonik di pagi hari dan menikmati makan malam di penginapan kayu tradisional Alpen."
+      },
+      {
+        "day": "Hari 2",
+        "title": "Panorama Tre Cime",
+        "activity": "Wisata panorama ke Tre Cime di Lavaredo dengan pemandu lokal, mencari sudut-sudut paling tenang untuk fotografi alam."
+      },
+      {
+        "day": "Hari 3",
+        "title": "Udara Segar Val di Funes",
+        "activity": "Kunjungan ke desa Val di Funes yang indah dan menikmati keju lokal di pondok Alpen sebelum melanjutkan perjalanan."
+      }
+    ]
   }
 }
