@@ -140,7 +140,7 @@
             
             <div class="flex items-center space-x-6">
                 <button class="material-icons-outlined text-xl hover:text-primary transition-colors" aria-label="Search">search</button>
-                <a href="https://wa.me/6281234567890?text=Halo%20Tourare,%20saya%20ingin%20konsultasi%20mengenai%20perjalanan%20saya." target="_blank" class="bg-primary text-white px-6 py-2.5 text-sm font-medium hover:bg-opacity-90 transition-all shadow-lg shadow-primary/20">Konsultasi</a>
+                <a href="https://wa.me/087792182223?text=Halo%20Tourare,%20saya%20ingin%20konsultasi%20mengenai%20perjalanan%20saya." target="_blank" class="bg-primary text-white px-6 py-2.5 text-sm font-medium hover:bg-opacity-90 transition-all shadow-lg shadow-primary/20">Konsultasi</a>
             </div>
         </div>
     </nav>
@@ -328,20 +328,20 @@
                 </div>
             </div>
             <div class="bg-white dark:bg-background-dark p-8 md:p-12 shadow-2xl border border-slate-100 dark:border-slate-800 rounded-sm">
-                <form action="#" class="space-y-6">
+                <form id="cta-form" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-2 block">Nama Lengkap</label>
-                            <input type="text" class="w-full bg-slate-50 dark:bg-slate-900/50 border-none px-4 py-3 text-sm focus:ring-1 focus:ring-primary" placeholder="Marcus Thompson">
+                            <input type="text" id="form-name" required class="w-full bg-slate-50 dark:bg-slate-900/50 border-none px-4 py-3 text-sm focus:ring-1 focus:ring-primary" placeholder="Marcus Thompson">
                         </div>
                         <div>
                             <label class="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-2 block">Email</label>
-                            <input type="email" class="w-full bg-slate-50 dark:bg-slate-900/50 border-none px-4 py-3 text-sm focus:ring-1 focus:ring-primary" placeholder="marcus@example.com">
+                            <input type="email" id="form-email" required class="w-full bg-slate-50 dark:bg-slate-900/50 border-none px-4 py-3 text-sm focus:ring-1 focus:ring-primary" placeholder="marcus@example.com">
                         </div>
                     </div>
                     <div>
                         <label class="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-2 block">Destinasi Impian</label>
-                        <select class="w-full bg-slate-50 dark:bg-slate-900/50 border-none px-4 py-3 text-sm focus:ring-1 focus:ring-primary">
+                        <select id="form-destination" class="w-full bg-slate-50 dark:bg-slate-900/50 border-none px-4 py-3 text-sm focus:ring-1 focus:ring-primary">
                             <option>Kyoto, Jepang</option>
                             <option>Alentejo, Portugal</option>
                             <option>Dolomites, Italia</option>
@@ -350,7 +350,7 @@
                     </div>
                     <div>
                         <label class="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-2 block">Pesan</label>
-                        <textarea rows="4" class="w-full bg-slate-50 dark:bg-slate-900/50 border-none px-4 py-3 text-sm focus:ring-1 focus:ring-primary" placeholder="Ceritakan sedikit tentang rencana perjalanan Anda..."></textarea>
+                        <textarea id="form-message" rows="4" required class="w-full bg-slate-50 dark:bg-slate-900/50 border-none px-4 py-3 text-sm focus:ring-1 focus:ring-primary" placeholder="Ceritakan sedikit tentang rencana perjalanan Anda..."></textarea>
                     </div>
                     <button id="cta-button-text" type="submit" class="w-full bg-primary text-white py-4 text-sm font-bold uppercase tracking-widest hover:bg-opacity-90 transition-all shadow-lg shadow-primary/20"></button>
                 </form>
@@ -514,7 +514,7 @@
                 items.forEach((item, index) => {
                     if(!item) return;
                     const cardId = `dest${index + 1}`;
-                    const waLink = `https://wa.me/6281234567890?text=Halo%20Tourare,%20saya%20ingin%20memesan%20paket%20tour%20ke%20${encodeURIComponent(item.title)}.`;
+                    const waLink = `https://wa.me/087792182223?text=Halo%20Tourare,%20saya%20ingin%20memesan%20paket%20tour%20ke%20${encodeURIComponent(item.title)}.`;
                     
                     const card = `
                         <div class="group cursor-pointer reveal reveal-delay-${index + 1}">
@@ -590,6 +590,20 @@
         }
 
         document.addEventListener('DOMContentLoaded', loadCMSData);
+
+        // Handle CTA Form to WhatsApp
+        document.getElementById('cta-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const email = document.getElementById('form-email').value;
+            const destination = document.getElementById('form-destination').value;
+            const message = document.getElementById('form-message').value;
+            
+            const waText = `Halo Tourare,\n\nSaya ingin bertanya mengenai perjalanan saya.\n\n*Nama:* ${name}\n*Email:* ${email}\n*Destinasi:* ${destination}\n\n*Pesan:* \n${message}`;
+            const waUrl = `https://wa.me/087792182223?text=${encodeURIComponent(waText)}`;
+            
+            window.open(waUrl, '_blank');
+        });
 
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
