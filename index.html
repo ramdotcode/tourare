@@ -140,7 +140,7 @@
             
             <div class="flex items-center space-x-6">
                 <button class="material-icons-outlined text-xl hover:text-primary transition-colors" aria-label="Search">search</button>
-                <a href="https://wa.me/087792182223?text=Halo%20Tourare,%20saya%20ingin%20konsultasi%20mengenai%20perjalanan%20saya." target="_blank" class="bg-primary text-white px-6 py-2.5 text-sm font-medium hover:bg-opacity-90 transition-all shadow-lg shadow-primary/20">Konsultasi</a>
+                <a href="https://wa.me/6287792182223?text=Halo%20Tourare,%20saya%20ingin%20konsultasi%20mengenai%20perjalanan%20saya." target="_blank" class="bg-primary text-white px-6 py-2.5 text-sm font-medium hover:bg-opacity-90 transition-all shadow-lg shadow-primary/20">Konsultasi</a>
             </div>
         </div>
     </nav>
@@ -514,7 +514,7 @@
                 items.forEach((item, index) => {
                     if(!item) return;
                     const cardId = `dest${index + 1}`;
-                    const waLink = `https://wa.me/087792182223?text=Halo%20Tourare,%20saya%20ingin%20memesan%20paket%20tour%20ke%20${encodeURIComponent(item.title)}.`;
+                    const waLink = `https://wa.me/6287792182223?text=Halo%20Tourare,%20saya%20ingin%20memesan%20paket%20tour%20ke%20${encodeURIComponent(item.title)}.`;
                     
                     const card = `
                         <div class="group cursor-pointer reveal reveal-delay-${index + 1}">
@@ -600,7 +600,7 @@
             const message = document.getElementById('form-message').value;
             
             const waText = `Halo Tourare,\n\nSaya ingin bertanya mengenai perjalanan saya.\n\n*Nama:* ${name}\n*Email:* ${email}\n*Destinasi:* ${destination}\n\n*Pesan:* \n${message}`;
-            const waUrl = `https://wa.me/087792182223?text=${encodeURIComponent(waText)}`;
+            const waUrl = `https://wa.me/6287792182223?text=${encodeURIComponent(waText)}`;
             
             window.open(waUrl, '_blank');
         });
