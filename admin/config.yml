@@ -88,9 +88,22 @@ collections:
           - {label: "Foto Penulis", name: "image", widget: "image"}
 
       - name: "cta"
-        label: "Section Final CTA"
+        label: "Section Final CTA (Form)"
         file: "data/cta.json"
         fields:
           - {label: "Headline", name: "headline", widget: "string"}
           - {label: "Deskripsi", name: "description", widget: "text"}
-          - {label: "Teks Tombol", name: "button_text", widget: "string"}
+          - {label: "Nomor Telepon", name: "phone", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Teks Tombol Form", name: "button_text", widget: "string"}
+
+      - name: "gallery"
+        label: "Galeri Perjalanan"
+        file: "data/gallery.json"
+        fields:
+          - name: "images"
+            label: "Foto-foto Galeri (Pilih 6 untuk layout terbaik)"
+            widget: "list"
+            fields:
+              - {label: "Gambar", name: "image", widget: "image"}
+              - {label: "Alt Text", name: "alt", widget: "string"}

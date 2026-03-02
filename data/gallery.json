@@ -1,0 +1,28 @@
+{
+  "images": [
+    {
+      "image": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=800",
+      "alt": "Danau tenang di pagi hari"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800",
+      "alt": "Perahu di kanal Venesia"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1433838552652-f9a46b332c40?auto=format&fit=crop&q=80&w=800",
+      "alt": "Pemandangan pegunungan Alpen"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=1200",
+      "alt": "Hutan berkabut di pagi hari"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&q=80&w=800",
+      "alt": "Kuil tradisional Jepang"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1200",
+      "alt": "Matahari terbenam di pantai tropis"
+    }
+  ]
+}

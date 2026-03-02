@@ -247,6 +247,22 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section class="py-32 px-8 lg:px-[10%] bg-white dark:bg-background-dark overflow-hidden">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 reveal">
+                <div class="max-w-xl">
+                    <span class="inline-block text-primary font-bold tracking-[0.3em] uppercase text-[10px] mb-6">Galeri Perjalanan</span>
+                    <h2 class="serif text-4xl md:text-5xl">Momen-momen Keheningan yang Tertangkap Kamera</h2>
+                </div>
+            </div>
+            
+            <div id="gallery-container" class="grid grid-cols-2 md:grid-cols-4 gap-6 auto-rows-[250px] md:auto-rows-[350px]">
+                <!-- Dinamis via CMS -->
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonial -->
     <section class="py-40 px-8 lg:px-[10%] bg-slate-50 dark:bg-surface-dark/30 relative overflow-hidden">
         <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full -mr-48 -mt-48 blur-3xl"></div>
@@ -293,15 +309,51 @@
         </div>
     </section>
 
-    <!-- Final CTA Section -->
-    <section class="py-32 px-8 lg:px-[10%] bg-white dark:bg-background-dark overflow-hidden relative reveal">
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <h2 id="cta-headline" class="serif text-5xl md:text-7xl mb-10 leading-tight"></h2>
-            <p id="cta-description" class="text-slate-500 dark:text-slate-400 text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
-            </p>
-            <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-                <a href="https://wa.me/6281234567890?text=Halo%20Tourare,%20saya%20tertarik%20untuk%20konsultasi%20perjalanan%20eksklusif." target="_blank" id="cta-button" class="bg-primary text-white px-10 py-4 text-sm font-medium hover:bg-opacity-90 transition-all shadow-xl shadow-primary/20 uppercase tracking-widest flex items-center justify-center"></a>
-                <a href="#" class="text-xs font-bold tracking-widest uppercase border-b-2 border-slate-200 hover:border-primary transition-colors pb-1">Lihat Brosur Digital</a>
+    <!-- Final CTA Section (Converted to Form) -->
+    <section class="py-32 px-8 lg:px-[10%] bg-surface-light dark:bg-surface-dark/10 overflow-hidden relative reveal">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 relative z-10">
+            <div>
+                <h2 id="cta-headline" class="serif text-5xl md:text-6xl mb-10 leading-tight"></h2>
+                <p id="cta-description" class="text-slate-500 dark:text-slate-400 text-lg mb-12 leading-relaxed">
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4 text-sm font-medium">
+                        <span class="material-icons-outlined text-primary">phone</span>
+                        <span id="cta-phone"></span>
+                    </div>
+                    <div class="flex items-center gap-4 text-sm font-medium">
+                        <span class="material-icons-outlined text-primary">mail</span>
+                        <span id="cta-email"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white dark:bg-background-dark p-8 md:p-12 shadow-2xl border border-slate-100 dark:border-slate-800 rounded-sm">
+                <form action="#" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-2 block">Nama Lengkap</label>
+                            <input type="text" class="w-full bg-slate-50 dark:bg-slate-900/50 border-none px-4 py-3 text-sm focus:ring-1 focus:ring-primary" placeholder="Marcus Thompson">
+                        </div>
+                        <div>
+                            <label class="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-2 block">Email</label>
+                            <input type="email" class="w-full bg-slate-50 dark:bg-slate-900/50 border-none px-4 py-3 text-sm focus:ring-1 focus:ring-primary" placeholder="marcus@example.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-2 block">Destinasi Impian</label>
+                        <select class="w-full bg-slate-50 dark:bg-slate-900/50 border-none px-4 py-3 text-sm focus:ring-1 focus:ring-primary">
+                            <option>Kyoto, Jepang</option>
+                            <option>Alentejo, Portugal</option>
+                            <option>Dolomites, Italia</option>
+                            <option>Lainnya</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-2 block">Pesan</label>
+                        <textarea rows="4" class="w-full bg-slate-50 dark:bg-slate-900/50 border-none px-4 py-3 text-sm focus:ring-1 focus:ring-primary" placeholder="Ceritakan sedikit tentang rencana perjalanan Anda..."></textarea>
+                    </div>
+                    <button id="cta-button-text" type="submit" class="w-full bg-primary text-white py-4 text-sm font-bold uppercase tracking-widest hover:bg-opacity-90 transition-all shadow-lg shadow-primary/20"></button>
+                </form>
             </div>
         </div>
         <!-- Decorative element -->
@@ -431,6 +483,25 @@
                     document.getElementById('hero-image-container').classList.add('opacity-100');
                 };
 
+                // Load Gallery
+                const galleryRes = await fetch('/data/gallery.json');
+                const galleryData = await galleryRes.json();
+                const galleryContainer = document.getElementById('gallery-container');
+                galleryContainer.innerHTML = galleryData.images.map((img, index) => {
+                    let layoutClass = "";
+                    // Precise Bento Grid for 6 items in 4 columns
+                    if (index === 0) layoutClass = "col-span-2 md:row-span-2"; // Row 1-2, Col 1-2
+                    if (index === 3) layoutClass = "col-span-2 md:col-span-2"; // Row 2, Col 3-4
+                    if (index === 4) layoutClass = "col-span-2 md:col-span-2"; // Row 3, Col 1-2
+                    if (index === 5) layoutClass = "col-span-2 md:col-span-2"; // Row 3, Col 3-4
+                    
+                    return `
+                        <div class="reveal reveal-delay-${(index % 4) + 1} overflow-hidden rounded-sm shadow-xl group ${layoutClass}">
+                            <img alt="${img.alt}" class="w-full h-full object-cover img-reveal" src="${img.image}"/>
+                        </div>
+                    `;
+                }).join('');
+
                 // Load Destinations Statis (Tetap Muncul 3)
                 const destRes = await fetch('/data/destinations.json');
                 const destData = await destRes.json();
@@ -443,8 +514,10 @@
                 items.forEach((item, index) => {
                     if(!item) return;
                     const cardId = `dest${index + 1}`;
+                    const waLink = `https://wa.me/6281234567890?text=Halo%20Tourare,%20saya%20ingin%20memesan%20paket%20tour%20ke%20${encodeURIComponent(item.title)}.`;
+                    
                     const card = `
-                        <a href="/destination.html?id=${cardId}" class="group cursor-pointer reveal reveal-delay-${index + 1}">
+                        <div class="group cursor-pointer reveal reveal-delay-${index + 1}">
                             <div class="overflow-hidden mb-8 aspect-[4/5] rounded-sm relative">
                                 <img alt="${item.title}" class="w-full h-full object-cover img-reveal" src="${item.image}"/>
                                 <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
@@ -454,10 +527,10 @@
                                 <span class="text-[10px] font-bold tracking-widest uppercase text-primary bg-primary/10 px-2 py-1">${item.price}</span>
                             </div>
                             <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">${item.description}</p>
-                            <span class="inline-flex items-center text-[10px] font-bold uppercase tracking-[0.2em] group-hover:translate-x-2 transition-transform duration-300">
-                                Jelajahi Pengalaman <span class="material-icons-outlined text-sm ml-2">east</span>
-                            </span>
-                        </a>
+                            <a href="${waLink}" target="_blank" class="inline-flex items-center text-[10px] font-bold uppercase tracking-[0.2em] group-hover:translate-x-2 transition-transform duration-300">
+                                Pesan Aja <span class="material-icons-outlined text-sm ml-2">east</span>
+                            </a>
+                        </div>
                     `;
                     container.innerHTML += card;
                 });
@@ -504,7 +577,9 @@
                 const ctaData = await ctaRes.json();
                 document.getElementById('cta-headline').innerText = ctaData.headline;
                 document.getElementById('cta-description').innerText = ctaData.description;
-                document.getElementById('cta-button').innerText = ctaData.button_text;
+                document.getElementById('cta-phone').innerText = ctaData.phone;
+                document.getElementById('cta-email').innerText = ctaData.email;
+                document.getElementById('cta-button-text').innerText = ctaData.button_text;
 
                 // Initialize Scroll Reveal after all data is loaded
                 initScrollReveal();
@@ -526,5 +601,6 @@
             });
         }
     </script>
+
 </body>
 </html>
